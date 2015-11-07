@@ -1,0 +1,35 @@
+﻿@model TechNightMVC.Models.Livro
+@{
+    ViewBag.Title = "Novo Livro";
+}
+
+<h2>Novo Livro</h2>
+@using (Html.BeginForm("InserirLivro", "Home", FormMethod.Post))
+{
+    <div>
+        @Html.LabelFor(x => x.Codigo)<span>: </span>
+        @Html.EditorFor(x => x.Codigo)
+        @Html.ValidationMessageFor(x => x.Codigo)
+    </div>
+    <div>
+        @Html.LabelFor(x => x.Titulo)<span>: </span>
+        @Html.EditorFor(x => x.Titulo)
+        @Html.ValidationMessageFor(x => x.Titulo)
+    </div>
+    <div>
+        @Html.LabelFor(x => x.Autor)<span>: </span>
+        @Html.EditorFor(x => x.Autor)
+        @Html.ValidationMessageFor(x => x.Autor)
+    </div>
+    <div>
+        @Html.LabelFor(x => x.Ano)<span>: </span>
+        @Html.EditorFor(x => x.Ano)
+        @Html.ValidationMessageFor(x => x.Ano)
+    </div>
+    <div>
+        <input type="submit" value="Salvar" />
+        <a href="/livros">Voltar</a>
+    </div>
+}
+<script src="~/Scripts/jquery.validate.js"></script>
+

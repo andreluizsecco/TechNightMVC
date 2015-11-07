@@ -1,0 +1,18 @@
+﻿@model IEnumerable<TechNightMVC.Models.Livro>
+@{
+    ViewBag.Title = "Livros";
+}
+
+<h2>Livros Cadastrados</h2>
+
+<ul>
+    @foreach(var item in Model)
+    {
+        <li>
+            @Html.ActionLink(item.Titulo, "EditarLivro", "Home", new { @codigo = item.Codigo }, null)<span>, </span>
+            @Html.DisplayFor(m => item.Autor) <span> - </span>
+            @Html.DisplayFor(m => item.Ano)
+        </li>
+    }
+</ul>
+@Html.ActionLink("Novo", "NovoLivro", "Home")
